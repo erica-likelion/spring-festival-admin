@@ -7,16 +7,20 @@ export const Container = styled(motion.button)`
   display: flex;
   align-items: center;
   border-radius: 0.75rem;
+  border: none;
+  background-color: ${(props) => props.theme.colors.grayScale.gy950};
 `;
 
 export const Wrapper = styled.div`
   display: flex;
+  align-items: center;
   gap: 0.87rem;
 `;
 
 export const InnerButton = styled.div`
   display: flex;
   padding: 0.25rem;
+  justify-content: center;
   align-items: center;
   gap: 0.625rem;
   width: 2rem;
