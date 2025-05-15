@@ -1,3 +1,4 @@
+import { AlarmButton } from '@/components/button';
 import * as S from './HelpModal.styles';
 
 export default function HelpModal() {
@@ -21,7 +22,7 @@ export default function HelpModal() {
         <S.Title>입장 안내 알림을 보낼 수 있어요!</S.Title>
       </S.TextFrame>
       <S.GraySection>
-        <button>입장알림</button>
+        <AlarmButton size="small" />
         <S.TextFrame>
           <S.Body>지금 바로 입장이 가능합니다.</S.Body>
           <S.Body>주점에서 안내를 따라주세요!</S.Body>
