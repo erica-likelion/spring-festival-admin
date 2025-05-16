@@ -1,20 +1,17 @@
 import { NavBar } from '@/components/nav-bar';
 import * as S from './Admin.styles';
-import { Button, Help, Info } from '@/features/admin';
-import AlarmButton from '@/components/button/AlarmButton';
-import CallButton from '@/components/button/CallButton';
+import { Button, Help, Info, WaitingList } from '@/features/admin';
 
 export default function Admin() {
   return (
-    <>
+    <S.Container>
       <NavBar isBack title="웨이팅 관리" />
       <S.Wrapper>
         <Info />
         <Button />
       </S.Wrapper>
       <Help />
-      <AlarmButton />
-      <CallButton tel="010-0000-0000" />
-    </>
+      <WaitingList />
+    </S.Container>
   );
 }
