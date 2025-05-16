@@ -1,28 +1,36 @@
 import { RefAttributes } from 'react';
 import * as S from './AlarmButton.styles';
 import AlarmIcon from '@/assets/icons/alert.svg?react';
+import useModal from '@/hooks/useModal';
+import AlarmModal from '@/components/button/AlarmModal';
 
 interface AlarmButtonProps extends RefAttributes<HTMLButtonElement> {
   disabled?: boolean;
   size?: 'small' | 'large';
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  id?: number;
   children?: React.ReactNode;
 }
 
 export default function AlarmButton({
   disabled = false,
   size = 'large',
+  id,
   children = '입장 알림',
-  onClick,
   ...props
 }: AlarmButtonProps) {
+  const AlarmContent = AlarmModal as React.ComponentType<{
+    id: number;
+    title: string;
+    closeModal: () => void;
+  }>;
+  const { open, close } = useModal(AlarmContent);
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (disabled) {
+    if (disabled || id === undefined) {
       e.preventDefault();
       e.stopPropagation();
       return;
     }
-    onClick?.(e);
+    open({ title: '입장 알림 보내기', id, closeModal: close });
   };
   return (
     <S.Container
