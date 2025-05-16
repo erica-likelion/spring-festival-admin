@@ -44,7 +44,10 @@ export default function CallButton({
       onClick={handleClick}
       {...props}
     >
-      <PhoneIcon />
+      <PhoneIcon
+        width={size === 'large' ? '1.25rem' : '1.125rem'}
+        height={size === 'large' ? '1.25rem' : '1.125rem'}
+      />
       {children}
     </S.Container>
   );
