@@ -9,6 +9,7 @@ export const Container = styled.div`
   align-items: center;
   flex-shrink: 0;
   background-color: ${(props) => props.theme.colors.grayScale.gy950};
+  margin: 0.37rem 0rem;
 `;
 
 export const Text = styled.span`
