@@ -39,6 +39,7 @@ export const Button = styled(motion.button)`
   color: ${(props) => props.theme.colors.grayScale.white};
   background: ${(props) => props.theme.colors.primary.bl400};
 
+  ${(props) => props.theme.fonts.body.medium500};
   &:disabled {
     background: ${(props) => props.theme.colors.grayScale.gy700};
   }
