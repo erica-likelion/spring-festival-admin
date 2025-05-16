@@ -9,6 +9,7 @@ interface AlarmButtonProps extends RefAttributes<HTMLButtonElement> {
   size?: 'small' | 'large';
   id?: number;
   children?: React.ReactNode;
+  isStopPropagation?: boolean;
 }
 
 export default function AlarmButton({
@@ -16,6 +17,7 @@ export default function AlarmButton({
   size = 'large',
   id,
   children = '입장 알림',
+  isStopPropagation = false,
   ...props
 }: AlarmButtonProps) {
   const AlarmContent = AlarmModal as React.ComponentType<{
@@ -25,6 +27,9 @@ export default function AlarmButton({
   }>;
   const { open, close } = useModal(AlarmContent);
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (isStopPropagation) {
+      e.stopPropagation();
+    }
     if (disabled || id === undefined) {
       e.preventDefault();
       e.stopPropagation();

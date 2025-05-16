@@ -10,6 +10,7 @@ interface CallButtonProps extends RefAttributes<HTMLButtonElement> {
   tel?: string;
   num?: string;
   children?: React.ReactNode;
+  isStopPropagation?: boolean;
 }
 
 export default function CallButton({
@@ -18,6 +19,7 @@ export default function CallButton({
   tel,
   num,
   children = '전화걸기',
+  isStopPropagation = false,
   ...props
 }: CallButtonProps) {
   const CallContent = CallModal as React.ComponentType<{
@@ -27,6 +29,9 @@ export default function CallButton({
   }>;
   const { open } = useModal(CallContent);
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (isStopPropagation) {
+      e.stopPropagation();
+    }
     if (disabled) {
       e.preventDefault();
       e.stopPropagation();

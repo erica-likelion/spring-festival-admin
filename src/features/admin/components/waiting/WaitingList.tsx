@@ -113,8 +113,8 @@ function WaitingListItem({
           </S.TextFrame>
         </S.TextSection>
         <S.ButtonSection>
-          <AlarmButton id={waiting.id} />
-          <CallButton tel={waiting.phone} />
+          <AlarmButton id={waiting.id} isStopPropagation={isSelect} />
+          <CallButton tel={waiting.phone} isStopPropagation={isSelect} />
         </S.ButtonSection>
       </S.ListItem>
     </S.ListItemContainer>
