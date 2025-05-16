@@ -17,9 +17,7 @@ export const ListItem = styled(motion.li)<{ $isSelect?: boolean }>`
   align-items: center;
   padding: 0.75rem;
   border-radius: 0.75rem;
-  border: 0.0625rem
-    ${(props) =>
-      props.$isSelect ? props.theme.colors.primary.bl400 : props.theme.colors.grayscale.black}
+  border: 0.0625rem ${(props) => (props.$isSelect ? props.theme.colors.primary.bl400 : 'none')}
     solid;
   background: none;
 `;
