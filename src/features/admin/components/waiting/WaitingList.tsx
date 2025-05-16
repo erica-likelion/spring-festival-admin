@@ -26,7 +26,7 @@ const waitings: WaitingType[] = [
     isAlert: false,
   },
   {
-    id: 2,
+    id: 3,
     name: 'Jane Smith',
     phone: '987-654-3210',
     status: {
@@ -36,7 +36,7 @@ const waitings: WaitingType[] = [
     isAlert: false,
   },
   {
-    id: 2,
+    id: 4,
     name: 'Jane Smith',
     phone: '987-654-3210',
     status: {
@@ -46,7 +46,7 @@ const waitings: WaitingType[] = [
     isAlert: false,
   },
   {
-    id: 2,
+    id: 5,
     name: 'Jane Smith',
     phone: '987-654-3210',
     status: {
@@ -76,7 +76,9 @@ export default function WaitingList() {
         );
       })}
       <S.BottomPadding />
-      <BottomBar id={selectedIndex !== null ? waitings[selectedIndex].id : null} />
+      {selectedIndex != null && (
+        <BottomBar id={selectedIndex} setSelectedIndex={() => setSelectedIndex(null)} />
+      )}
     </S.Container>
   );
 }
