@@ -5,7 +5,7 @@ import { Button, Help, Info, WaitingList } from '@/features/admin';
 export default function Admin() {
   return (
     <S.Container>
-      <NavBar isBack title="웨이팅 관리" />
+      <NavBar isBack title="웨이팅 관리" backPath={'/'} />
       <S.Wrapper>
         <Info />
         <Button />
