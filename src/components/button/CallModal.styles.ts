@@ -21,6 +21,10 @@ export const GraySection = styled.div`
   background: ${(props) => props.theme.colors.grayScale.gy950};
 `;
 
+export const Anchor = styled.a`
+  text-decoration: none;
+`;
+
 export const Button = styled(motion.button)`
   display: flex;
   width: 15rem;
@@ -28,6 +32,7 @@ export const Button = styled(motion.button)`
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
+  border: none;
   border-radius: 0.75rem;
   background: ${(props) => props.theme.colors.primary.bl400};
   ${(props) => props.theme.fonts.body.medium500};

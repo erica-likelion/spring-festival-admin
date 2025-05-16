@@ -19,11 +19,11 @@ export default function CallModal({ tel, num }: { tel: string; num: string }) {
         </S.MediumText>
       </S.GraySection>
       <S.SmallText $isGray={false}>아래 버튼을 누르면 해당 대기자에게 전화를 겁니다.</S.SmallText>
-      <a href={`tel:${tel.replace(/-/g, '')}`}>
+      <S.Anchor href={`tel:${tel.replace(/-/g, '')}`}>
         <S.Button whileTap={{ scale: 0.97 }} onClick={handleClick}>
-          전화걸기
+          전화 걸기
         </S.Button>
-      </a>
+      </S.Anchor>
     </S.Container>
   );
 }
