@@ -1,3 +1,4 @@
+import { logout } from '@/features/login/services/logout';
 import axios from 'axios';
 
 const axiosInstance = axios.create({
@@ -42,8 +43,7 @@ axiosInstance.interceptors.response.use(
         }
       } catch (refreshError) {
         console.error('토큰 갱신 실패', refreshError);
-        localStorage.removeItem('access_token');
-        window.location.href = '/login';
+        await logout();
       }
     }
 
